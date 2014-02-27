@@ -305,7 +305,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['concat', 'uglify', 'sed']);
     grunt.registerTask('docs', ['build', 'copy', 'emu', 'toc', 'markdown', 'docco']);
     grunt.registerTask('web', ['docs', 'gh-pages']);
-    grunt.registerTask('test', ['docs', 'jasmine:specs', 'test-stock-example', 'shell:hooks']);
+    grunt.registerTask('test', ['docs', 'jasmine:specs', 'test-stock-example:diff', 'shell:hooks']);
     grunt.registerTask('coverage', ['jasmine:coverage']);
     grunt.registerTask('lint', ['build', 'jshint']);
     grunt.registerTask('default', ['build']);
